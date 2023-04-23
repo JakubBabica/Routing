@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     action: rootAction,
     children: [
       {
-        path: "contacts/edit",
+        path: "pokemons",
         element: <EditContact />,
         loader: contactLoader,
         action: editAction,
