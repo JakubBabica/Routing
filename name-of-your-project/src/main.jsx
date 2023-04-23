@@ -6,13 +6,16 @@ import {
 } from "react-router-dom";
 import './index.css'
 import ErrorPage from "./routes/error-page";
-import Contact, {
+import Pokemon, {
   loader as contactLoader,
-} from "./routes/contact";
+} from "./routes/Pokemon";
+import About, {
+  loader as aboutLoader,
+} from "./routes/About";
 import Root, { loader as rootLoader,action as rootAction, } from "./routes/root";
 import EditContact, {
   action as editAction,
-} from "./routes/edit";
+} from "./routes/Pokemon";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,7 +30,14 @@ const router = createBrowserRouter([
         loader: contactLoader,
         action: editAction,
       },
+      {
+        path: "about",
+        element: <About />,
+        loader: contactLoader,
+        action: editAction,
+      },
     ],
+    
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(

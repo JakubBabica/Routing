@@ -1,20 +1,21 @@
 import { Outlet, Link, useLoaderData, Form,redirect,} from "react-router-dom";
-import { getContacts, createContact } from "../contacts";
 export async function action() {
   return redirect(`pokemons`);
 }
 export async function loader() {
-  const contacts = await getContacts();
-  return { contacts };
+  return { };
 }
 export default function Root() {
     return (
       <>
         <div id="sidebar">
-          <h1>React Router Contacts</h1>
+          <h1>React Router</h1>
           <nav>
           <Link to={`pokemons`}>
                   <i>Pokemons</i>
+          </Link>
+          <Link to={`about`}>
+                  <i>About</i>
           </Link>
           </nav>
         </div>

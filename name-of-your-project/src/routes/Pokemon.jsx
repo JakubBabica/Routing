@@ -1,14 +1,16 @@
 import { Form, useLoaderData,redirect, } from "react-router-dom";
-import { updateContact } from "../contacts";
 import React, { useState } from 'react';
-export async function action({ request, params }) {
-    const formData = await request.formData();
-    const updates = Object.fromEntries(formData);
-    await updateContact(params.contactId, updates);
-    return redirect(`/contacts/${params.contactId}`);
+
+export async function action() {
+    await fetchPokemonDetails();
+    return redirect(`/pokemon`);
+  }
+  export async function loader() {
+    const contact = null;
+    return { contact };
   }
 export default function EditContact() {
-  const { contact } = useLoaderData();
+  const { pokemon } = useLoaderData();
   const [pokemonData, setPokemonData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
